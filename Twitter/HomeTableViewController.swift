@@ -99,6 +99,7 @@ class HomeTableViewController: UITableViewController {
         
         cell.userNameLabel.text = user["name"] as? String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
+        cell.timeLabel.text = getRelativeTime(timeString: (tweetArray[indexPath.row]["created_at"] as? String)!)
         
         let imageURL = URL(string: (user["profile_image_url_https"] as? String)!)
         let data = try? Data(contentsOf: imageURL!)
@@ -126,28 +127,37 @@ class HomeTableViewController: UITableViewController {
         return tweetArray.count
     }
     
-    /*func getRelativeTime(timeString: String) -> String {
-     let time: Date
-     let dateFormatter = DateFormatter()
-     dateFormatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
-     time = dateFormatter.date(from: timeString)!
-     return time.timeAgoDisplay()
-     }
-     }
-     
-     extension Date {
-     func timeAgoDisplay() -> String {
-     let secondsAgo = Int(Date().timeIntervalSince(self))
-     let minute = 60
-     let hour = 60 * minute
-     let day = 24 * hour
-     let week = 7 * day
-     if secondsAgo < minute {
-     }
-     
-     return SOMETHING
-     
-     }*/
+    func getRelativeTime(timeString: String) -> String {
+        let time: Date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
+        time = dateFormatter.date(from: timeString)!
+        return time.timeAgoDisplay()
+    }
+}
+
+extension Date {
+    func timeAgoDisplay() -> String {
+        let secondsAgo = Int(Date().timeIntervalSince(self))
+        let minute = 60
+        let hour = 60 * minute
+        let day = 24 * hour
+        let week = 7 * day
+        if secondsAgo < minute {
+            return "\(secondsAgo) seconds ago"
+        }
+        else if secondsAgo < hour {
+            return "\(secondsAgo / minute) minutes ago"
+            
+        }else if secondsAgo < day {
+            return "\(secondsAgo / hour) days ago"
+            
+        } else if secondsAgo < week {
+            return "\(secondsAgo / day) days ago"
+        }
+        
+        return "\(secondsAgo / week) weeks ago"
+    }
      
     
 

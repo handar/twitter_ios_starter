@@ -79,7 +79,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tweet Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oB-AY-y4M">
-                                            <rect key="frame" x="89" y="30.5" width="83" height="14.5"/>
+                                            <rect key="frame" x="89" y="30.5" width="203" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -106,6 +106,12 @@
                                                 <action selector="favoriteTweet:" destination="2OA-Xx-JjV" eventType="touchUpInside" id="Gtr-ad-aEi"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO9-R4-6Rw">
+                                            <rect key="frame" x="268" y="8" width="25" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="9oB-AY-y4M" firstAttribute="top" secondItem="PFd-3H-dcm" secondAttribute="bottom" constant="1.5" id="4jV-A2-za4"/>
@@ -116,12 +122,15 @@
                                         <constraint firstItem="1Sv-b4-FJ2" firstAttribute="leading" secondItem="2dM-Qv-ff4" secondAttribute="leadingMargin" constant="274" id="KPf-d2-gqH"/>
                                         <constraint firstItem="eg2-rV-GXz" firstAttribute="trailing" secondItem="2dM-Qv-ff4" secondAttribute="trailingMargin" constant="10" id="Xot-yb-gbQ"/>
                                         <constraint firstItem="PFd-3H-dcm" firstAttribute="top" secondItem="2dM-Qv-ff4" secondAttribute="topMargin" id="aev-i3-OTc"/>
+                                        <constraint firstAttribute="trailing" secondItem="zO9-R4-6Rw" secondAttribute="trailing" constant="15" id="b0k-Fm-ALu"/>
                                         <constraint firstItem="xlm-3c-d6V" firstAttribute="leading" secondItem="2dM-Qv-ff4" secondAttribute="leadingMargin" id="cY1-L7-GKc"/>
                                         <constraint firstItem="PFd-3H-dcm" firstAttribute="leading" secondItem="xlm-3c-d6V" secondAttribute="trailing" constant="8" id="d0l-l1-wOI"/>
                                         <constraint firstItem="eg2-rV-GXz" firstAttribute="top" secondItem="9oB-AY-y4M" secondAttribute="bottom" constant="54" id="dDP-At-bFR"/>
                                         <constraint firstItem="9oB-AY-y4M" firstAttribute="leading" secondItem="xlm-3c-d6V" secondAttribute="trailing" constant="8" id="ftE-Y8-dMt"/>
                                         <constraint firstItem="eg2-rV-GXz" firstAttribute="leading" secondItem="1Sv-b4-FJ2" secondAttribute="trailing" constant="10" id="pJP-VH-k9W"/>
+                                        <constraint firstItem="zO9-R4-6Rw" firstAttribute="leading" secondItem="PFd-3H-dcm" secondAttribute="trailing" constant="110" id="pRA-je-Cdm"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="eg2-rV-GXz" secondAttribute="bottom" constant="10" id="qiL-eg-0H6"/>
+                                        <constraint firstItem="zO9-R4-6Rw" firstAttribute="top" secondItem="2dM-Qv-ff4" secondAttribute="top" constant="8" id="r90-fL-1HW"/>
                                         <constraint firstItem="eg2-rV-GXz" firstAttribute="leading" secondItem="1Sv-b4-FJ2" secondAttribute="trailing" constant="10" id="v2l-le-1gj"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -129,6 +138,7 @@
                                     <outlet property="faveButton" destination="eg2-rV-GXz" id="cER-ek-r1a"/>
                                     <outlet property="profileImageView" destination="xlm-3c-d6V" id="uGd-XC-rgf"/>
                                     <outlet property="retweetButton" destination="1Sv-b4-FJ2" id="YtK-MP-Ipc"/>
+                                    <outlet property="timeLabel" destination="zO9-R4-6Rw" id="Az9-QT-5lc"/>
                                     <outlet property="tweetContent" destination="9oB-AY-y4M" id="W8K-N6-q3U"/>
                                     <outlet property="userNameLabel" destination="PFd-3H-dcm" id="UdQ-ON-138"/>
                                 </connections>
